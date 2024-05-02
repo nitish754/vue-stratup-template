@@ -28,6 +28,7 @@ const toastOptions = {
  * register custom plugin 
  */
 import permissionPlugin from './plugins/permissionPlugin.js';
+import loaderPlugin from './plugins/loaderPlugin.js';
 
 ApiService.init("http://localhost:8000/api")
 
@@ -43,6 +44,7 @@ app.use(store);
 app.use(VueSweetalert2,sweetAlertOption);
 app.use(Toast,toastOptions);
 app.use(permissionPlugin,store);
+app.use(loaderPlugin)
 // app.use(ToastPlugin);
 
 app.mount("#app");

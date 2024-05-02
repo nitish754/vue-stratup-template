@@ -2,9 +2,10 @@
     <DefaultLayout title="Employees">
         <section class="section">
             <div class="row">
-                
+
                 <div class="col-lg-12">
-                    <router-link class="btn btn-primary" to="/add-employee"><i class="bi bi-plus"></i> Employee</router-link>
+                    <router-link class="btn btn-primary" to="/add-employee"><i class="bi bi-plus"></i>
+                        Employee</router-link>
                     <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#disablebackdrop">Add Employee</button> -->
                     <div class="card">
                         <div class="card-header">
@@ -72,7 +73,7 @@
     </DefaultLayout>
 
     <EmployeeForm />
-    
+
 </template>
 
 <script lang="js">

@@ -1,6 +1,8 @@
 <template>
     <main>
         <div class="container">
+        <LoaderComp :loading="isLoading" message="Authenticating Your Request..."/>
+            
 
             <section
                 class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
@@ -75,6 +77,7 @@
 </template>
 
 <script>
+// import LoaderComp from "@/components/LoaderComp.vue";
 import { Login } from '@/services/UserService.js';
 import { useToast } from 'vue-toastification';
 import { mapActions, mapGetters } from 'vuex';
@@ -88,11 +91,15 @@ export default {
     },
     data() {
         return {
+            isLoading:false,
             email: null,
             password: null,
             remember: true
         }
     },
+    // components:{
+    //     LoaderComp
+    // },
     computed: {
         ...mapGetters('auth', ['currentUser', 'isLoggedIn', 'authToken']),
     },
@@ -106,6 +113,9 @@ export default {
         ...mapActions('auth', ['setLogin']),
         async login() {
             try {
+                // show loader 
+                this.isLoading=true;
+
                 const credentials = {
                     email: this.email,
                     password: this.password,

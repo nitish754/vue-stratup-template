@@ -9,22 +9,29 @@
             </li><!-- End Dashboard Nav -->
 
 
-            <li class="nav-item" v-if="$hasPermission('View Employee')">
+            <li class="nav-item" v-if="$hasPermission('View Employees')">
                 <router-link class="nav-link collapsed" to="/employee">
                     <i class="bi bi-person"></i>
                     <span>Employees</span>
                 </router-link>
             </li><!-- End Profile Page Nav -->
+
+            <li class="nav-item" v-if="$hasPermission('Add Project')">
+                <router-link class="nav-link collapsed" to="/employee">
+                    <i class="bi bi-person"></i>
+                    <span>Projects</span>
+                </router-link>
+            </li><!-- End Profile Page Nav -->
             
 
-            <li class="nav-item">
+            <li class="nav-item" v-if="$hasPermission('View User')">
                 <router-link class="nav-link collapsed" to="/users">
                     <i class="bi bi-person"></i>
                     <span>System User</span>
                 </router-link>
             </li><!-- End F.A.Q Page Nav -->
 
-            <li class="nav-item">
+            <li class="nav-item" v-if="$hasPermission('View Roles')">
                 <router-link class="nav-link collapsed" to="/role-permission">
                     <i class="bi bi-lock"></i>
                     <span>Roles &amp; Permissions</span>

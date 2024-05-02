@@ -40,14 +40,14 @@ export const Login = async (credentials) => {
 
             } else {
                 console.log('Server error:', error.response.data);
-                throw new Error('Internal Server Error');
+                toast.error('Internal Server Error');
             }
         } else if (error.request) {
             console.log("No Response from server : ", error.message);
-            throw new Error("No Response from server");
+            toast.error("No Response from server");
         } else {
             console.log('Request setup error:', error.message);
-            throw new Error('Request setup error');
+            toast.error('Request setup error');
         }
     }
 }
