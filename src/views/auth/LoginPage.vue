@@ -131,8 +131,6 @@ export default {
 
                     console.log(response)
                 }
-
-                // console.log(response);
             } catch (error) {
                 alert(error.message);
             }
