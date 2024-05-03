@@ -6,6 +6,8 @@ import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import ApiService from '@/services/ApiService.js'
+import Helpers from '@/utilities/helpers.js';
+
 
 /**
  * sweet alert 2 
@@ -38,6 +40,10 @@ const sweetAlertOption = {
 };
 
 const app = createApp(App);
+
+
+// register helper class to use it globally 
+app.config.globalProperties.$helper = Helpers;
 
 app.use(router);
 app.use(store);

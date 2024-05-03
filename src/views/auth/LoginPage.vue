@@ -123,6 +123,7 @@ export default {
                 };
                 const response = await Login(credentials);
                 if (response) {
+                    this.isLoading=false;
                     // commit state 
                     this.setLogin(response);
                     //    get user data from state
@@ -132,7 +133,9 @@ export default {
                     console.log(response)
                 }
             } catch (error) {
-                alert(error.message);
+                // alert(error.message);
+                console.log(error.message);
+                this.isLoading=false;
             }
 
         },

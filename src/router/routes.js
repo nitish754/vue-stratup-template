@@ -8,6 +8,7 @@ import addEmployee from "@/views/employee/addEmployee.vue";
 import UserList from "@/views/users/UserList.vue";
 import RoleList from "@/views/roles/RoleList.vue";
 import NotFound from "@/views/errors/NotFound.vue";
+import ProjectList from "@/views/projects/ProjectList.vue";
 
 
 const routes = [
@@ -49,7 +50,17 @@ const routes = [
         name : "roles",
         component : RoleList
     },
-    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+    {
+        path : "/projects",
+        name : "projects",
+        component : ProjectList
+    }
+
+
+
+
+
+    ,{ path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
     {
         path : '/test',
         name : 'test',

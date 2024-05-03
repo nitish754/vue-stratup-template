@@ -17,7 +17,7 @@
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item" v-if="$hasPermission('Add Project')">
-                <router-link class="nav-link collapsed" to="/employee">
+                <router-link class="nav-link collapsed" to="/projects">
                     <i class="bi bi-person"></i>
                     <span>Projects</span>
                 </router-link>

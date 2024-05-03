@@ -31,23 +31,29 @@ export const Login = async (credentials) => {
                     })
                     console.log(validationMessage);
                     toast.error(validationMessage[0]);
+                    throw new Error('Validation error')
                 }
                 else if (error.response.data.message) {
                     toast.error(error.response.data.message);
+                    throw new error(error.response.data.message);
                 } else {
                     toast.error("Something went wrong !")
+                    throw new error("Something went wrong !");
                 }
 
             } else {
                 console.log('Server error:', error.response.data);
                 toast.error('Internal Server Error');
+                throw new Error('Internal Server Error');
             }
         } else if (error.request) {
             console.log("No Response from server : ", error.message);
             toast.error("No Response from server");
+            throw new Error('No Response from server');
         } else {
             console.log('Request setup error:', error.message);
             toast.error('Request setup error');
+            throw new Error('Request setup erro');
         }
     }
 }

@@ -4,9 +4,9 @@
             <div class="row">
 
                 <div class="col-lg-12">
-                    <router-link class="btn btn-primary" to="/add-employee"><i class="bi bi-plus"></i>
-                        Project</router-link>
-                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#disablebackdrop">Add Employee</button> -->
+                    <!-- <router-link class="btn btn-primary" to="/add-employee"><i class="bi bi-plus"></i>
+                        Project</router-link> -->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#disablebackdrop">Add Project</button>
                     <div class="card">
                         <div class="card-header">
                             Projects
@@ -36,14 +36,30 @@
             </div>
         </section>
     </DefaultLayout>
+
+    <ProjectForm />
+
 </template>
 
 <script>
 import DefaultLayout from '@/components/layouts/DefaultLayout.vue';
+import ProjectForm from '../../components/modal/ProjectForm.vue';
+
 export default {
     name: "ProjectList",
     components: {
-        DefaultLayout
+        DefaultLayout,
+        ProjectForm
+    },
+    data() {
+        return {
+            name : "My Pro"
+        }
+    },
+    methods : {
+        handleProjectForm(){
+            alert("form submitted");
+        }
     }
 
 }
